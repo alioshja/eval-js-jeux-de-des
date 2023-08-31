@@ -6,11 +6,51 @@
         <meta content="jeux de dès JS">
     </head>
     <body>
-        <!-- Le header accueillera le score des 2 joeurs actuel et total -->
-        <header class="score"><p>scoreS</p></header>
-        <!-- Le main accueilleras le plateau de jeux ou on vera les dès -->
-        <main class="viewport"></main>
+        <!-- Le header accueillera le score des 2 joeurs actuel et total-->
+        <header class="score">
+
+        <!-- divs pour les scores des joueurs-->
+    <div class="divS">
+        <p class="js">score total du j1=</p>
+        <p class="js">score de la manche du j1= </p>
+    </div>
+    <div class="divS">
+        <p class="js">score total du j2=</p>
+        <p class="js">score de la manche du j2= </p>
+    </div>
+        </header>
+        <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
+        <main>
+        <!-- Divs pour images des joueurs -->
+    <div class="imageP">
+        <img class="scale" src="images\logo-dessin-anime-du-roi-couronne_643934-1289.avif">    
+    </div>
+    <div class="imageP2">
+        <img class="scale" src="images\tete-roi-mascotte-dessin-anime-illustration_360091-332.avif">
+    </div>
+        <!--Div pour le plateau de jeux avec des balises img possèdant des id pour le script java ce qui affichera l'image du des correspondant au numéro que le joueur a fait-->
+    <div class="viewport">
+        <div>
+            <p class="center">joueur 1</p>
+        </div>
+        <img src="" alt="" id="desDuJ1">
+    </div>
+    <div class="viewport2">
+        <div>
+            <p class="center">joueur 2</p>
+        </div>
+        <img src="" alt="" id="dseDuJ2">
+    </div>
+        </main>
         <!--Le footer accueillera les compétences spéciales des joueurs et leurs temps de rechargement-->
-        <footer class="players"></footer>
+        <footer class="power">
+            <p class="p">dès doubles</p>
+            <p class="pp">bouclier</p>
+            <p class="pp2">lame émoussé</p>
+
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </footer>
     </body>
 </html>
