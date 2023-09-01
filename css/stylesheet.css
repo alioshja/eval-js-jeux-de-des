@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(165, 81, 42);
+    background-color: rgb(54, 54, 54);
     margin: 0px;
     padding: 0px;
     font-size: 2vh;
@@ -7,7 +7,7 @@ body {
 
 /* Classe pour styliser la bare de score */
 .score {
-    background-color: red;
+    background-color: rgb(37, 37, 37);
     display: block;
     height: 20%;
     width: 100%;
@@ -23,8 +23,14 @@ body {
 }
 
 .js {
-    background-color: rgb(2, 150, 2);
+    background-image: url("../images/fond-bare-de-scores.png");
+    background-size:cover;
     border: 2px solid black;
+    width: 20vw;
+    height: 3vh;
+    text-align: center;
+    padding-top: 1vh;
+    margin-left: 14vw;
 }
 /* -------------------------------------------------------------------*/
 /* -------------------------------------------------------------------*/
@@ -35,14 +41,14 @@ body {
     position:absolute;
     top: 5vw;
     right: 1vw;
-    z-index: 1;
+    z-index: 2;
 }
 
 .imageP2 {
     position: absolute;
     top: 5vw;
     left: 1vw;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Classe pour dimensionner les images */
@@ -56,7 +62,7 @@ body {
 .viewport {
     width: 49vw;
     height: 75vh;
-    background: url("images/fond-viewport.png");
+    background: url("../images/fond-viewport2.png");
     background-size: 100%;
     position: absolute;
     top: 14vh;
@@ -68,7 +74,7 @@ body {
 .viewport2 {
     width: 49vw;
     height: 75vh;
-    background: url("images/fond-viewport.png");
+    background: url("../images/fond-viewport2.png");
     position: absolute;
     top: 14vh;
     right: 1vw;
@@ -76,12 +82,17 @@ body {
     border-top-right-radius: 2vh;
     border-bottom-right-radius: 2vh;
     z-index: 1;
+    background-size: 100%;
 }
 
 
 /* classe pour placer au bon endroit le nom du joueur */
 .center {
     text-align: center;
+    color:white;
+    background-color: rgb(39, 39, 39);
+    padding: 1VH;
+    border-top:  2px solid rgba(255, 255, 0, 0.705);
 }
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
@@ -90,25 +101,29 @@ body {
 
 /* Classe pour styliser la bare de compétence  */
 .power {
-    background-color: red;
+    background-color: rgb(59, 59, 59);
     position: absolute;
     z-index: 1;
     bottom: 0vh;
     height: 10vh;
     width: 100%;
+    border-top: 2px solid rgba(255, 255, 0, 0.705);
+    color:blueviolet;
 }
 /*Classes pour placer les textes cote a cote*/
 .p{
     position: absolute;
-    bottom: 5vh;
+    bottom: 6vh;
+    left: 6vw;
 }
 .pp {
  position: absolute;
- left: 7vw;
- bottom: 5vh;
+ left: 16vw;
+ bottom: 6vh;
 }
 .pp2 {
     position: absolute;
-    left: 15vw;
-    bottom: 5vh;
+    left: 25vw;
+    bottom: 6vh;
 }
+
