@@ -126,4 +126,23 @@ body {
     left: 25vw;
     bottom: 6vh;
 }
-
+.button {
+    background-color: blueviolet;
+    height: 3vh;
+    width: 8vw;
+    position: absolute;
+    z-index: 1;
+    top:40vh;
+    left: 20vw;
+}
+/* class pour images des dès qui sera renseigné avec le script js */
+.imgDes {
+    height: 15vw;
+    width: 15vw;
+    position: absolute;
+    z-index: 1;
+    top:25vh;
+    left: 17vw;
+    border: 2px solid blueviolet;
+    border-radius: 2vw;
+}
