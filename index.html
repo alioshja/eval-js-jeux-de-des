@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--faire un media query pour image du plateau-->
 <html>
     <head>
         <script src="js\script.js"></script>
@@ -12,12 +12,12 @@
 
         <!-- divs pour les scores des joueurs-->
     <div class="divS">
-        <p class="js">score total du j1=</p>
-        <p class="js">score de la manche du j1= </p>
+        <p class="js" id="SCR1">score total du j1=</p>
+        <p class="js" id="SRCT1">score de la manche du j1= </p>
     </div>
     <div class="divS">
-        <p class="js">score total du j2=</p>
-        <p class="js">score de la manche du j2= </p>
+        <p class="js" id="SCR2">score total du j2=</p>
+        <p class="js" id="SCRT2">score de la manche du j2= </p>
     </div>
         </header>
         <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
@@ -35,17 +35,18 @@
         <div>
             <p class="center">joueur 1</p>
         </div>
-        <!-- div pour le bouton -->
+        <!-- div pour le bouton avec un bouton qui possède comme attribut onclick ce qui exécute la fonction JS qui lance les dès-->
         <div id="button">
             <button class="button" onclick="launching()">Lancer le dès</button>
         </div>
-        <img src="" alt="" id="desDuJ1">
     </div>
     <div class="viewport2">
         <div>
             <p class="center">joueur 2</p>
         </div>
-        <img src="" alt="" id="dseDuJ2">
+        <div>
+            <button class="button2" onclick="launching2()">Lancer le dès</button>
+        </div>
     </div>
         </main>
         <!--Le footer accueillera les compétences spéciales des joueurs et leurs temps de rechargement-->

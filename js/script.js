@@ -1,17 +1,23 @@
 // déclaration des variables indispensables.
 
 //launch est pour cibler l'endroit ou on vas modifier le script
-var lauch = document.getElementById("button");
+var launch = document.getElementById("button");
 var reWrite = "button";
-
+// var foundI = document.getElementsByName();
 var turn = null;
 var joueur1 = true;
 var joueur2 = null;
-function des() {
-    return Math.random() * (6.49 - 1) + 1;
-}
-var lancer = des();//cheked
 
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+    //liens images pour dès
+var d1l = "images/1-des-face.png";
+var d2l = "images/2-des-face.png";
+var d3l = "images/3-des-face.png";
+var d4l = "images/4-des-face.png";
+var d5l = "images/5-des-face.png";
+var d6l = "images/6-des-face.png";
 
 
 //---------------------------------------------------------------------------------
@@ -20,37 +26,96 @@ var lancer = des();//cheked
 
 
 // construction du sript qui lance le dès après click sur le button.
-
-function launching (launch) 
+max = 6;
+min = 1;
+function launching()
 {
-    var create = document.createElement("img");
-    var number = null;
-
-        // je crée un attribut src avec comme valeur le lien vers mon image
+    var lancer = Math.floor(Math.random() * (max - min + 1)) + min;
+    var number = lancer;//cheked
+    var imageCreate = document.createElement("img");
+    var getID = document.getElementById("button");
+    console.log(number);
+    
     if (number == 1) {
-        create.setAttribute(src, "images/1-des-face.png").className = "imgDes";
-        imagejavascript.src
-        // je cree un attribut class avec comme valeur ma classe qui donne mes dimentions a l'image
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d1l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes'); //fonctionne
     }
 
-    if (number == 2) {
-        create.setAttribute(src, "images/2-des-face.png").className = "imgDes";
+    else if (number == 2) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d2l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes');
     }
 
-    if (number == 3) {
-        create.setAttribute(src, "images/3-des-face.png").className = "imgDes";
+    else if (number == 3) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d3l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes');
+    
     }
 
-    if (number == 4) {
-        create.setAttribute(src, "images/4-des-face.png").className = "imgDes";
+    else if (number == 4) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d4l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes');
+    
     }
 
-    if (number == 5) {
-        create.setAttribute(src, "images/5-des-face.png").className = "imgDes";
+    else if (number == 5) {    
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d5l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes');
     }
 
-    if (number == 6) {
-        create.setAttribute(src, "images/6-des-face.png").className = "imgDes";
+    else if (number == 6) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d6l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes');
     }
-    else ;
+    
+}
+function launching2() 
+{
+    var lancer = Math.floor(Math.random() * (max - min + 1)) + min;
+    var number = lancer;//cheked
+    var imageCreate = document.createElement("img");
+    var getID = document.getElementById("button");
+    console.log(number)
+    
+    if (number == 1) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS') //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d1l) //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2') //fonctionne
+    }else if (number == 2) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS') //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d2l) //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2')
+    }
+
+    else if (number == 3) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d3l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2');
+    
+    }
+
+    else if (number == 4) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d4l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2');
+    
+    }
+
+    else if (number == 5) {    
+        getID.appendChild(imageCreate).setAttribute('ID','imgS'); //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d5l); //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2');
+    }
+
+    else if (number == 6) {
+        getID.appendChild(imageCreate).setAttribute('ID','imgS') //réussi
+        getID.appendChild(imageCreate).setAttribute('src',d6l) //fonctionne
+        getID.appendChild(imageCreate).setAttribute('class','imgDes2')
+    }
 }
