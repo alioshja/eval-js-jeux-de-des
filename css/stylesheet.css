@@ -150,20 +150,22 @@ body {
     height: 15vw;
     width: 15vw;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     top:25vh;
-    left: 19vw;
+    right: 64vw;
     border: 2px solid blueviolet;
     border-radius: 2vw;
 }
+
 .imgDes2 {
     display: block;
     height: 15vw;
     width: 15vw;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     top:25vh;
-    left: 68vw;
+    left: 19vw;
     border: 2px solid blueviolet;
     border-radius: 2vw;  
 }
+

@@ -1,63 +1,67 @@
 <!DOCTYPE html><!--faire un media query pour image du plateau-->
 <html>
-    <head>
-        <script src="js\script.js"></script>
-        <link href="css/stylesheet.css" rel="stylesheet">
-        <meta charset="utf-8" lang="fr">
-        <meta content="jeux de dès JS">
-    </head>
-    <body>
-        <!-- Le header accueillera le score des 2 joeurs actuel et total-->
-        <header class="score">
 
+<head>
+    <script src="js\script.js"></script>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <meta charset="utf-8" lang="fr">
+    <meta content="jeux de dès JS">
+</head>
+
+<body>
+    <!-- Le header accueillera le score des 2 joeurs actuel et total-->
+    <header class="score">
         <!-- divs pour les scores des joueurs-->
-    <div class="divS">
-        <p class="js" id="SCR1">score total du j1=</p>
-        <p class="js" id="SRCT1">score de la manche du j1= </p>
-    </div>
-    <div class="divS">
-        <p class="js" id="SCR2">score total du j2=</p>
-        <p class="js" id="SCRT2">score de la manche du j2= </p>
-    </div>
-        </header>
-        <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
-        <main>
+        <div class="divS">
+            <p class="js">score total du j1= <b id="SCRT1"></b></p>
+            <p class="js">score de la manche du j1= <b id="SCR1"></b></p>
+        </div>
+        <div class="divS">
+            <p class="js">score total du j2= <b id="SCRT2"></b></p>
+            <p class="js">score de la manche du j2= <b id="SCR2"></b></p>
+        </div>
+    </header>
+    <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
+    <main>
         <!-- Divs pour images des joueurs -->
-    <div class="imageP">
-        <img class="scale" src="images\logo-dessin-anime-du-roi-couronne_643934-1289.avif">    
-    </div>
-    <div class="imageP2">
-        <img class="scale" src="images\tete-roi-mascotte-dessin-anime-illustration_360091-332.avif">
-    </div>
+        <div class="imageP">
+            <img class="scale" src="images\logo-dessin-anime-du-roi-couronne_643934-1289.avif">
+        </div>
+        <div class="imageP2">
+            <img class="scale" src="images\tete-roi-mascotte-dessin-anime-illustration_360091-332.avif">
+        </div>
         <!--Div pour le plateau de jeux avec des balises img la div activera le script java apres click grace a la méthode getElementById ce qui 
             affichera l'image du dès correspondant au numéro que le joueur a fait qui est généré aléatoirement avec js-->
-    <div class="viewport">
-        <div>
-            <p class="center">joueur 1</p>
+        <div class="viewport" id="viewport">
+            <div>
+                <p class="center">joueur 1</p>
+            </div>
+            <!-- div pour le bouton avec un bouton qui possède comme attribut onclick ce qui exécute la fonction JS qui lance les dès-->
+            <div>
+                <audio id="song">
+                    <source src="bruitages\bruit-de-des.mp3">
+                </audio>
+                <img id="imgS">
+                <button class="button" onclick="launching('1')">Lancer le dés</button>
+            </div>
         </div>
-        <!-- div pour le bouton avec un bouton qui possède comme attribut onclick ce qui exécute la fonction JS qui lance les dès-->
-        <div id="button">
-            <button class="button" onclick="launching()">Lancer le dès</button>
+        <div class="viewport2" id="viewport2">
+            <div>
+                <p class="center">joueur 2</p>
+            </div>
+            <div>
+                <img id="imgS2">
+                <button class="button2" onclick="launching('2')">Lancer le dés</button>
+            </div>
         </div>
-    </div>
-    <div class="viewport2">
-        <div>
-            <p class="center">joueur 2</p>
-        </div>
-        <div>
-            <button class="button2" onclick="launching2()">Lancer le dès</button>
-        </div>
-    </div>
-        </main>
-        <!--Le footer accueillera les compétences spéciales des joueurs et leurs temps de rechargement-->
-        <footer class="power">
-            <p class="p">dès doubles</p>
-            <p class="pp">bouclier</p>
-            <p class="pp2">lame émoussé</p>
+        <audio id="victoire">
+            <source src="bruitages\Winner-Sound-Effects.mp3">
+        </audio>
+    </main>
+    <!--Le footer accueillera les compétences spéciales des joueurs et leurs temps de rechargement-->
+    <footer class="power">
+        
+    </footer>
+</body>
 
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </footer>
-    </body>
 </html>
