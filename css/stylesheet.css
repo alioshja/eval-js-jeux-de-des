@@ -3,6 +3,10 @@ body {
     margin: 0px;
     padding: 0px;
     font-size: 2vh;
+    @font-face {
+        font-family: Lato;
+        src: url(url('https://fonts.google.com/specimen/Lato'));
+    }
 }
 
 /* Classe pour styliser la bare de score */
@@ -19,7 +23,17 @@ body {
     text-align: left;
     margin: 0%;
     margin-left: 1vw;
+}
 
+.reset {
+    display: block;
+    background-color: darkgoldenrod;
+    height: 4vh;
+    width: 15vw;
+    border: 2px solid red;
+    position: absolute;
+    top: 7vh;
+    left: 42vw;
 }
 
 .js {
@@ -28,9 +42,24 @@ body {
     border: 2px solid black;
     width: 20vw;
     height: 3vh;
-    text-align: center;
-    padding-top: 1vh;
-    margin-left: 14vw;
+    position: absolute;
+    top: 1vh;
+    left:10vw;
+}
+
+.js2 {
+    background-image: url("../images/fond-bare-de-scores.png");
+    background-size:cover;
+    border: 2px solid black;
+    width: 20vw;
+    height: 3vh;
+    position: absolute;
+    top: 1vh;
+    right: 10vw;
+}
+
+.marginTop {
+    margin-top: 8vh;
 }
 /* -------------------------------------------------------------------*/
 /* -------------------------------------------------------------------*/
@@ -151,21 +180,8 @@ body {
     width: 15vw;
     position: absolute;
     z-index: 2;
-    top:25vh;
-    right: 64vw;
+    top: 30vh;
+    right: 42vw;
     border: 2px solid blueviolet;
     border-radius: 2vw;
-}
-
-.imgDes2 {
-    display: block;
-    height: 15vw;
-    width: 15vw;
-    position: absolute;
-    z-index: 2;
-    top:25vh;
-    left: 19vw;
-    border: 2px solid blueviolet;
-    border-radius: 2vw;  
-}
-
+};

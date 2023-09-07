@@ -7,18 +7,18 @@
     <meta charset="utf-8" lang="fr">
     <meta content="jeux de dès JS">
 </head>
-
 <body>
     <!-- Le header accueillera le score des 2 joeurs actuel et total-->
     <header class="score">
         <!-- divs pour les scores des joueurs-->
         <div class="divS">
             <p class="js">score total du j1= <b id="SCRT1"></b></p>
-            <p class="js">score de la manche du j1= <b id="SCR1"></b></p>
+            <p class="js marginTop">score de la manche du j1= <b id="SCR1"></b></p>
+            <button class="reset">Nouvelle partie</button>
         </div>
         <div class="divS">
-            <p class="js">score total du j2= <b id="SCRT2"></b></p>
-            <p class="js">score de la manche du j2= <b id="SCR2"></b></p>
+            <p class="js2">score total du j2= <b id="SCRT2"></b></p>
+            <p class="js2 marginTop">score de la manche du j2= <b id="SCR2"></b></p>
         </div>
     </header>
     <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
@@ -32,6 +32,9 @@
         </div>
         <!--Div pour le plateau de jeux avec des balises img la div activera le script java apres click grace a la méthode getElementById ce qui 
             affichera l'image du dès correspondant au numéro que le joueur a fait qui est généré aléatoirement avec js-->
+            <div>
+                <img id="imgS" src="images/1-des-face.png" class="imgDes">
+            </div>
         <div class="viewport" id="viewport">
             <div>
                 <p class="center">joueur 1</p>
@@ -41,17 +44,12 @@
                 <audio id="song">
                     <source src="bruitages\bruit-de-des.mp3">
                 </audio>
-                <img id="imgS">
                 <button class="button" onclick="launching('1')">Lancer le dés</button>
             </div>
         </div>
         <div class="viewport2" id="viewport2">
             <div>
                 <p class="center">joueur 2</p>
-            </div>
-            <div>
-                <img id="imgS2">
-                <button class="button2" onclick="launching('2')">Lancer le dés</button>
             </div>
         </div>
         <audio id="victoire">
