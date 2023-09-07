@@ -4,8 +4,6 @@ const max = 6;
 const min = 1;
 //tTscore est la variable de mon compteur total ce qui fait que je l'ai déclaré avant la fonction pour éviter que ma variable soit redéfini a 0 a chaque utilisation de ma fonction
 let tTScore = 0;
-let tTScore2 = 0;
-
         //liens images pour dès
         const d1l = "images/1-des-face.png";
         const d2l = "images/2-des-face.png";
@@ -15,55 +13,67 @@ let tTScore2 = 0;
         const d6l = "images/6-des-face.png";
 
 function newGame() {
-let tTScore = '0';
-let tTScore2 = '0';
-document.getElementById('SCRT1').setAttribute('text',tTScore);
-document.getElementById('SCRT2').setAttribute('text',tTScore2);
-}
-let tour = '';
-let resultat;
-function hold(joueur) {
-    tTScore = pScore; 
-    let scoreTotal = '';
-        //redefinition des var en fonction de quel utilisateur il sagit J1 ou J2 par conditions
+document.getElementById('SCRT1').innerHTML = '0';
+document.getElementById('SCRT2').innerHTML = '0';
+document.getElementById('SCR1').innerHTML = '0';
+document.getElementById('SCR2').innerHTML = '0';
+}//cheked
 
-    if (joueur == 1) {
+let tour = '';
+let scoreTotal = '';
+let compteur = 0;
+
+function hold(joueur) {
+ pScore
+        //redefinition des var en fonction de quel utilisateur il sagit J1 ou J2 par conditions
+if (joueur == 0){
+    pScore = 0;
+}
+
+if (joueur == 1) {
+    pScore = pScore + compteur;
+    compteur = pScore;
+    pScore = 0;
+}
+else if (joueur == 2) {
+    pScore = pScore + compteur;
+    compteur = pScore;
+    pScore = 0;
+}
+if (joueur == 1) {
     scoreTotal = 'SCRT1';
-    tour = 'Joueur 2 à vous';
-    resultat = [scoreTotal,tour];
-    return resultat;
+    document.getElementById(scoreTotal)
 }
 else if (joueur ==2) {
     scoreTotal = 'SCRT2'
-    tour = 'Joueur 1 à vous.'
-    resultat = [scoreTotal,tour];
-    return resultat;
 }
-else if (joueur == 3) {
-    tTScore = 0;
-    scoreTotal = 'SRT2';
+if (joueur == 1) {
     tour = 'Joueur 2 à vous';
-    resultat = [scoreTotal,tour];
-    return resultat;
 }
-else if (joueur == 4) {
-    tTScore = 0;
-    scoreTotal = 'SRT2';
-    tour = 'Joueur 1 à vous.';
-    resultat = [scoreTotal,tour];
-    return resultat;
+else if (joueur == 2) {
+    tour = 'Joueur 1 à vous';
 }
-document.getElementById(scoreTotal).textContent = tTScore;
-console.log(resultat[2]);
+document.getElementById(scoreTotal).innerHTML = compteur;//fonctionne
+   
+//algoritme qui défini la fin de la parti et qui a gagné    
+    if (compteur >= 100) {
+        document.getElementById('victoire').play()
+    }
+    else;
 }
+
+
 let score = 0;
 let pScore = 0;
 let passerTour = '';
+
+
 function launching(joueur)
 {
     //les joueurs peuvent lancer autant de fois le des quils le veulent mais si le dès tombe sur 1 le score tombe a 
     //0 et c'est au tour du 2ème joueur si un joueur sauvegarde son score grace au bouton hold alor il ne peut plus perdre son score et c'est au tour du 2ème joueur.
     
+
     //initialisation des var communes
         let lancer = Math.floor(Math.random() * (max - min + 1)) + min;
         console.log(lancer)
@@ -74,11 +84,9 @@ function launching(joueur)
     if (joueur == '1') {
         // ID score actuel
         score = 'SCR1';
-        passerTour = hold(3);
     }
     else if (joueur == '2') {
         score = 'SCR2';
-        passerTour = hold(4);
     }
     else ;
     const getID = document.getElementById(imgID);
@@ -92,8 +100,7 @@ function launching(joueur)
         getID.setAttribute('src',d1l);
         getID.setAttribute('class',nomDeClasse);
         document.getElementById(score).textContent = pScore;
-        passerTour;
-        return pScore;
+        hold(0);
     }
 
     else if (lancer == 2) {
@@ -101,7 +108,6 @@ function launching(joueur)
         getID.setAttribute('class',nomDeClasse)
         pScore = pScore + 2;
         document.getElementById(score).textContent = pScore;
-        return pScore;
     }
 
     else if (lancer == 3) {
@@ -109,7 +115,6 @@ function launching(joueur)
         getID.setAttribute('class',nomDeClasse)
         pScore = pScore + 3;
         document.getElementById(score).textContent = pScore;
-        return pScore;
     }
 
     else if (lancer == 4) {
@@ -117,7 +122,6 @@ function launching(joueur)
         getID.setAttribute('class',nomDeClasse)
         pScore = pScore + 4;
         document.getElementById(score).textContent = pScore;
-        return pScore;
     }
 
     else if (lancer == 5) {    
@@ -125,7 +129,6 @@ function launching(joueur)
         getID.setAttribute('class',nomDeClasse)
         pScore = pScore + 5;
         document.getElementById(score).textContent = pScore;
-        return pScore;
     }
 
     else if (lancer == 6) {
@@ -133,17 +136,10 @@ function launching(joueur)
         getID.setAttribute('class',nomDeClasse)
         pScore = pScore + 6;
         document.getElementById(score).textContent = pScore;
-        return pScore;
     }
-    console.log(pScore);
-    //------------------------------------------------------------------------
-    //------------------------------------------------------------------------
-    //------------------------------------------------------------------------
-
-
-    //algoritme qui défini la fin de la parti et qui a gagné
-    if (tTScore >= 100) {
-        document.getElementById('victoire').play()
-    }
-    else tour;
 }
+    
+
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------

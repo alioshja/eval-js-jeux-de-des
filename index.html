@@ -12,29 +12,18 @@
     <header class="score">
         <!-- divs pour les scores des joueurs-->
         <div class="divS">
-            <p class="js">score total du j1= <b id="SCRT1"></b></p>
-            <p class="js marginTop">score de la manche du j1= <b id="SCR1"></b></p>
-            <button class="reset">Nouvelle partie</button>
+            <p class="js">score total du j1= <b id="SCRT1">0</b></p>
+            <p class="js marginTop">score de la manche du j1= <b id="SCR1">0</b></p>
         </div>
         <div class="divS">
-            <p class="js2">score total du j2= <b id="SCRT2"></b></p>
-            <p class="js2 marginTop">score de la manche du j2= <b id="SCR2"></b></p>
+            <p class="js2">score total du j2= <b id="SCRT2">0</b></p>
+            <p class="js2 marginTop">score de la manche du j2= <b id="SCR2">0</b></p>
         </div>
     </header>
     <!-- Le main accueilleras le plateau de jeux ou on vera les dès des joueurs et leurs images-->
     <main>
-        <!-- Divs pour images des joueurs -->
-        <div class="imageP">
-            <img class="scale" src="images\logo-dessin-anime-du-roi-couronne_643934-1289.avif">
-        </div>
-        <div class="imageP2">
-            <img class="scale" src="images\tete-roi-mascotte-dessin-anime-illustration_360091-332.avif">
-        </div>
         <!--Div pour le plateau de jeux avec des balises img la div activera le script java apres click grace a la méthode getElementById ce qui 
             affichera l'image du dès correspondant au numéro que le joueur a fait qui est généré aléatoirement avec js-->
-            <div>
-                <img id="imgS" src="images/1-des-face.png" class="imgDes">
-            </div>
         <div class="viewport" id="viewport">
             <div>
                 <p class="center">joueur 1</p>
@@ -44,7 +33,6 @@
                 <audio id="song">
                     <source src="bruitages\bruit-de-des.mp3">
                 </audio>
-                <button class="button" onclick="launching('1')">Lancer le dés</button>
             </div>
         </div>
         <div class="viewport2" id="viewport2">
@@ -52,6 +40,21 @@
                 <p class="center">joueur 2</p>
             </div>
         </div>
+                <!-- Divs pour images des joueurs -->
+                <div>
+                    <button class="button" onclick="launching('1')">Lancer le dés</button>
+                    <button class="recomencer" onclick="newGame()">Nouvelle partie</button>
+                    <button class="suivant" onclick="hold(1)">Finir mon tour</button>
+                </div>
+                <div class="imageP">
+                    <img class="scale" src="images\logo-dessin-anime-du-roi-couronne_643934-1289.avif">
+                </div>
+                <div class="imageP2">
+                    <img class="scale" src="images\tete-roi-mascotte-dessin-anime-illustration_360091-332.avif">
+                </div>
+                <div>
+                    <img id="imgS" >
+                </div>
         <audio id="victoire">
             <source src="bruitages\Winner-Sound-Effects.mp3">
         </audio>
