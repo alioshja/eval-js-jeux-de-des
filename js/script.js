@@ -1,145 +1,169 @@
-// construction du sript qui lance le dès après click sur le button.
-// variables qui vont définir l'intervale de génération des chifres aléatoires
-const max = 6;
-const min = 1;
-//tTscore est la variable de mon compteur total ce qui fait que je l'ai déclaré avant la fonction pour éviter que ma variable soit redéfini a 0 a chaque utilisation de ma fonction
-let tTScore = 0;
-        //liens images pour dès
-        const d1l = "images/1-des-face.png";
-        const d2l = "images/2-des-face.png";
-        const d3l = "images/3-des-face.png";
-        const d4l = "images/4-des-face.png";
-        const d5l = "images/5-des-face.png";
-        const d6l = "images/6-des-face.png";
+// Liens vers les images pour les dés
+const desImages = [
+  "images/1-des-face.png",
+  "images/2-des-face.png",
+  "images/3-des-face.png",
+  "images/4-des-face.png",
+  "images/5-des-face.png",
+  "images/6-des-face.png"
+];
+//id des scores
+const scoreID = 'SCR1';
+const scoreID2 = 'SCR2'
+
+// id des scores Total
+const scoreTotalId = "SCRT1";
+const scoreTotalId2 = "SCRT2";
+
+// id des button qui déclenchent les fonctions.
+const idButtonLancer = 'button';
+const idButtonSauvegarder = 'suivant';
+const idButtonRecomencer = 'recomencer';
+
+// id balises song.
+const songDes = 'song';
+const songVictoire = 'victoire';
+
+// variables pour les compteurs.
+let scoreTotal = 0;
+let scoreTotal2 = 0;
+let compteur = 0;//servira de compteur pour la fonction
+let stockageCompteur = 0;
+let compteur1 = 0;//1 ET 2 sauvegarderons les valeurs de leurs joueurs respectifs
+let compteur2 = 0;
+const max =6;
+const min=1;
+
+// id de la balise image pour le des.
+const idDes = 'imgS';
+
+// Fonction pour lancer des
+let calcul ='';
+
+//messages pour joueurs
+const j1 = 'joueur 1 à vous';
+const j2 = 'joueur 2 à vous';
+
+// var pour savoir a qui vas passer le tour
+let tour = 0;
+let afficherScore = '';
+let fonctionPass = '';
+//////////////////////////////////////////////////////
+
+function lancerDes(joueur) {
+   calcul = Math.floor(Math.random() * (max - min + 1)) + min;//des lancé
+   document.getElementById('song').play();//song de dés.
+    if (joueur==1) {
+afficherScore = document.getElementById(scoreID);
+tour = 1;
+
+    }
+    else if (joueur==2) {
+afficherScore = document.getElementById(scoreID2);
+tour = 2;
+
+    }
+
+////////////////////////////////////////////////////////////////////////
+
+if (calcul == 1) {
+    document.getElementById(idDes).setAttribute('src',desImages[0]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur = 0;
+    stockageCompteur = 0;
+    alert('le joueur a fait un c est donc au joueur suivant')
+    passerTour();
+    }
+
+else if (calcul == 2) {
+    document.getElementById(idDes).setAttribute('src',desImages[1]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur += 2;
+    stockageCompteur = compteur;
+    }
+
+else if (calcul == 3) {
+    document.getElementById(idDes).setAttribute('src',desImages[2]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur += 3;
+    stockageCompteur = compteur;
+    }
+
+else if (calcul == 4) {
+    document.getElementById(idDes).setAttribute('src',desImages[3]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur += 4;
+    stockageCompteur = compteur;
+    }
+
+else if (calcul == 5) {
+    document.getElementById(idDes).setAttribute('src',desImages[4]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur += 5;
+    stockageCompteur = compteur;
+    }
+
+else if (calcul == 6) {
+    document.getElementById(idDes).setAttribute('src',desImages[5]);
+    document.getElementById(idDes).setAttribute('class','imgDes');
+    compteur += 6;
+    stockageCompteur = compteur;
+    }
+    console.log(stockageCompteur)
+    afficherScore.innerHTML = compteur;
+} 
+////////////////////////////////////////
+
+
+////////////////////////////////////////
+
+function passerTour() {
+
+//////////////////////////////////
+
+    if (tour == 1) {
+    scoreTotal += stockageCompteur;
+    document.getElementById(scoreID).innerHTML = compteur1;//modifie le score;
+    document.getElementById(scoreTotalId).innerHTML = scoreTotal;//modifie le score;
+    stockageCompteur = 0;
+    compteur = 0;
+    document.getElementById('button').setAttribute('onclick','lancerDes(2)');
+    alert(j2);
+    }
+    else if (tour == 2) {
+    scoreTotal2 += stockageCompteur;
+    document.getElementById(scoreID2).innerHTML = compteur2;//modifie le score;
+    document.getElementById(scoreTotalId2).innerHTML = scoreTotal2;//modifie le score;
+    document.getElementById('button').setAttribute('onclick','lancerDes(1)');   
+    alert(j1);
+    }
+    stockageCompteur = 0;
+    compteur = 0;
+    
+        // Ces cond permettent de metre fin a la parti et de dire qui a gagné;
+
+if (scoreTotal >= 100) {
+    document.getElementById('victoire').play();//song applaudissement.    
+    setTimeout(alert,4000,'Félicitations, au joueur 1, son armé a atteint 100 de puissance et a écrasé celle du joueur 2.');
+    setTimeout(newGame(),10000);
+}
+else if (scoreTotal2 >= 100) {
+    document.getElementById('victoire').play();//song applaudissement.    
+    setTimeout(alert,4000,'Félicitations, au joueur 2, son armé a atteint 100 de puissance et a écrasé celle du joueur 1.');
+    setTimeout(newGame(),10000);
+}
+}
 
 function newGame() {
-document.getElementById('SCRT1').innerHTML = '0';
-document.getElementById('SCRT2').innerHTML = '0';
-document.getElementById('SCR1').innerHTML = '0';
-document.getElementById('SCR2').innerHTML = '0';
-}//cheked
-
-let tour = '';
-let scoreTotal = '';
-let compteur = 0;
-
-function hold(joueur) {
- pScore
-        //redefinition des var en fonction de quel utilisateur il sagit J1 ou J2 par conditions
-if (joueur == 0){
-    pScore = 0;
+    stockageCompteur = 0;
+    compteur = 0;
+    compteur1 = 0;
+    compteur2 = 0;
+    scoreTotal = 0;
+    scoreTotal2 = 0;
+    tour = 0;
+    document.getElementById(scoreID).innerHTML = 0;
+    document.getElementById(scoreID2).innerHTML = 0;
+    document.getElementById(scoreTotalId2).innerHTML = 0;
+    document.getElementById(scoreTotalId).innerHTML = 0;
 }
-
-if (joueur == 1) {
-    pScore = pScore + compteur;
-    compteur = pScore;
-    pScore = 0;
-}
-else if (joueur == 2) {
-    pScore = pScore + compteur;
-    compteur = pScore;
-    pScore = 0;
-}
-if (joueur == 1) {
-    scoreTotal = 'SCRT1';
-    document.getElementById(scoreTotal)
-}
-else if (joueur ==2) {
-    scoreTotal = 'SCRT2'
-}
-if (joueur == 1) {
-    tour = 'Joueur 2 à vous';
-}
-else if (joueur == 2) {
-    tour = 'Joueur 1 à vous';
-}
-document.getElementById(scoreTotal).innerHTML = compteur;//fonctionne
-   
-//algoritme qui défini la fin de la parti et qui a gagné    
-    if (compteur >= 100) {
-        document.getElementById('victoire').play()
-    }
-    else;
-}
-
-
-let score = 0;
-let pScore = 0;
-let passerTour = '';
-
-
-function launching(joueur)
-{
-    //les joueurs peuvent lancer autant de fois le des quils le veulent mais si le dès tombe sur 1 le score tombe a 
-    //0 et c'est au tour du 2ème joueur si un joueur sauvegarde son score grace au bouton hold alor il ne peut plus perdre son score et c'est au tour du 2ème joueur.
-    
-
-    //initialisation des var communes
-        let lancer = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(lancer)
-        document.getElementById('song').play();
-        const nomDeClasse = 'imgDes';
-        let imgID = 'imgS';
-    //redefinition des var en fonction de quel utilisateur il sagit J1 ou J2 par conditions
-    if (joueur == '1') {
-        // ID score actuel
-        score = 'SCR1';
-    }
-    else if (joueur == '2') {
-        score = 'SCR2';
-    }
-    else ;
-    const getID = document.getElementById(imgID);
-//---------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------
-    
-    //algoritme qui défini quelle images charges et quel chiffre aléatoire c'est ainsi que les modifications du dom.
-    if (lancer == 1) {
-        pScore = 0;
-        getID.setAttribute('src',d1l);
-        getID.setAttribute('class',nomDeClasse);
-        document.getElementById(score).textContent = pScore;
-        hold(0);
-    }
-
-    else if (lancer == 2) {
-        getID.setAttribute('src',d2l);
-        getID.setAttribute('class',nomDeClasse)
-        pScore = pScore + 2;
-        document.getElementById(score).textContent = pScore;
-    }
-
-    else if (lancer == 3) {
-        getID.setAttribute('src',d3l);
-        getID.setAttribute('class',nomDeClasse)
-        pScore = pScore + 3;
-        document.getElementById(score).textContent = pScore;
-    }
-
-    else if (lancer == 4) {
-        getID.setAttribute('src',d4l);
-        getID.setAttribute('class',nomDeClasse)
-        pScore = pScore + 4;
-        document.getElementById(score).textContent = pScore;
-    }
-
-    else if (lancer == 5) {    
-        getID.setAttribute('src',d5l);
-        getID.setAttribute('class',nomDeClasse)
-        pScore = pScore + 5;
-        document.getElementById(score).textContent = pScore;
-    }
-
-    else if (lancer == 6) {
-        getID.setAttribute('src',d6l);
-        getID.setAttribute('class',nomDeClasse)
-        pScore = pScore + 6;
-        document.getElementById(score).textContent = pScore;
-    }
-}
-    
-
-    //------------------------------------------------------------------------
-    //------------------------------------------------------------------------
-    //------------------------------------------------------------------------
