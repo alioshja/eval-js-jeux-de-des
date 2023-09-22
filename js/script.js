@@ -41,8 +41,8 @@ const idDes = 'imgS';
 let calcul ='';
 
 //messages pour joueurs
-const j1 = 'joueur 1 à vous';
-const j2 = 'joueur 2 à vous';
+const j1 = 'Joueur 1 à vous';
+const j2 = 'Joueur 2 à vous';
 
 // var pour savoir a qui vas passer le tour
 let tour = 0;
@@ -63,6 +63,10 @@ afficherScore = document.getElementById(scoreID2);
 tour = 2;
 
     }
+////////////////////////////////////////////////////////////////////////
+
+document.getElementById('music').play();
+document.getElementById('music').volume = 0.5;
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +75,7 @@ if (calcul == 1) {
     document.getElementById(idDes).setAttribute('class','imgDes');
     compteur = 0;
     stockageCompteur = 0;
-    alert('le joueur a fait un c est donc au joueur suivant')
+    alert("Le joueur a fait un 1 c'est donc au joueur suivant")
     passerTour();
     }
 
@@ -118,8 +122,6 @@ else if (calcul == 6) {
 ////////////////////////////////////////
 
 function passerTour() {
-
-//////////////////////////////////
 
     if (tour == 1) {
     scoreTotal += stockageCompteur;

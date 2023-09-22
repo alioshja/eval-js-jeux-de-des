@@ -1,3 +1,4 @@
+
 body {
     background-color: rgb(54, 54, 54);
     margin: 0px;
@@ -8,8 +9,10 @@ body {
         src: url(url('https://fonts.google.com/specimen/Lato'));
     }
 }
-
+    
 /* Classe pour styliser la bare de score */
+@media screen {
+    
 .score {
     background-color: rgb(37, 37, 37);
     display: block;
@@ -40,10 +43,11 @@ body {
     background-size:cover;
     border: 2px solid black;
     width: 20vw;
-    height: 3vh;
+    height: 4vh;
     position: absolute;
     top: 1vh;
     left:10vw;
+    text-align: center;
 }
 
 .js2 {
@@ -51,10 +55,11 @@ body {
     background-size:cover;
     border: 2px solid black;
     width: 20vw;
-    height: 3vh;
+    height: 4vh;
     position: absolute;
     top: 1vh;
     right: 10vw;
+    text-align: center;
 }
 
 .marginTop {
@@ -90,7 +95,7 @@ body {
     width: 49vw;
     height: 75vh;
     background: url("../images/fond-viewport2.png");
-    background-size: 100%;
+    background-size:cover;
     position: absolute;
     top: 14vh;
     left: 1vw;
@@ -108,7 +113,7 @@ body {
     border-left: 2px solid black;
     border-top-right-radius: 2vh;
     border-bottom-right-radius: 2vh;
-    background-size: 100%;
+    background-size: cover;
 }
 
 
@@ -135,22 +140,8 @@ body {
     border-top: 2px solid rgba(255, 255, 0, 0.705);
     color:blueviolet;
 }
-/*Classes pour placer les textes cote a cote*/
-.p{
-    position: absolute;
-    bottom: 6vh;
-    left: 6vw;
-}
-.pp {
- position: absolute;
- left: 16vw;
- bottom: 6vh;
-}
-.pp2 {
-    position: absolute;
-    left: 25vw;
-    bottom: 6vh;
-}
+/*Classes pour styliser et placer les buttons*/
+
 .button {
     background-color: blueviolet;
     height: 4vh;
@@ -177,4 +168,174 @@ body {
     right: 43vw;
     border: 2px solid blueviolet;
     border-radius: 2vw;
-};
+}
+}
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*parti pour le design mobile en portrait*/
+
+@media (orientation: portrait) {
+    
+    /* Classe pour styliser la bare de score */
+    .score {
+        background-color: rgb(37, 37, 37);
+        display: block;
+        height: 50%;
+        width: 100%;
+    }
+    
+    .divS {
+        display: inline-block;
+        width: 48%;
+        text-align: left;
+        margin: 0%;
+        margin-left: 1vw;
+    }
+    
+    .recomencer {
+        display: block;
+        position: absolute;
+        background-color: darkgoldenrod;
+        height: 5vh;
+        width: 15vh;
+        top: 25vh;
+        left: 32vw;
+    }
+    
+    .js {
+        background-image: url("../images/fond-bare-de-scores.png");
+        background-size:cover;
+        border: 2px solid black;
+        width: 20vh;
+        height: 8vh;
+        position: absolute;
+        top: 1vh;
+        left:1vw;
+        text-align: center;
+        color: red;
+        font-size: 5vw;
+    }
+    
+    .js2 {
+        background-image: url("../images/fond-bare-de-scores.png");
+        background-size:cover;
+        border: 2px solid black;
+        width: 20vh;
+        height: 8vh;
+        position: absolute;
+        top: 1vh;
+        right: 1vw;
+        text-align: center;
+        color: red;
+        font-size: 5vw;
+    }
+    
+    .marginTop {
+        margin-top: 8vh;
+    }
+    /* -------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------*/
+    
+    /* Classes pour disposer les images au bon endroit */
+    .imageP {
+        position:absolute;
+        top: 25vh;
+        right: 1vw;
+    
+    }
+    
+    .imageP2 {
+        position: absolute;
+        top: 25vh;
+        left: 1vw;
+    }
+    
+    /* Classe pour dimensionner les images */
+    .scale {
+        height: 25vw;
+        width: 25vw;
+        border-radius: 50%;
+    }
+    
+    /* Classe pour styliser le plateau de jeux */
+    .viewport {
+        width: 49vw;
+        height: 70vh;
+        background-color: rgb(0, 139, 86);
+        background-image: none;
+        position: absolute;
+        top: 18vh;
+        left: 1vw;
+        border-top-left-radius: 2vh;
+        border-bottom-left-radius: 2vh;
+    }
+    
+     .viewport2 {
+        width: 49vw;
+        height: 70vh;
+        background-color: rgb(0, 139, 86);
+        position: absolute;
+        top: 18vh;
+        right: 1vw;
+        border-left: 2px solid black;
+        border-top-right-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+        background-image: none;
+    } 
+    
+    
+    /* classe pour placer au bon endroit le nom du joueur */
+    .center {
+        text-align: center;
+        color:white;
+        background-color: rgb(39, 39, 39);
+        padding: 1VH;
+        border-top:  2px solid rgba(255, 255, 0, 0.705);
+    }
+    /* ----------------------------------------------------------------*/
+    /* ----------------------------------------------------------------*/
+    /* ----------------------------------------------------------------*/
+    
+    
+    /* Classe pour styliser la bare de compétence  */
+    .power {
+        background-color: rgb(59, 59, 59);
+        position: absolute;
+        bottom: 0vh;
+        height: 10vh;
+        width: 100%;
+        border-top: 2px solid rgba(255, 255, 0, 0.705);
+        color:blueviolet;
+    }
+    /*Classes pour styliser et placer les buttons*/
+    
+    .button {
+        background-color: blueviolet;
+        height: 4vh;
+        width: 15vh;
+        position: absolute;
+        bottom:30vh;
+        left: 32.5vw;
+    }
+    .suivant {
+        background-color: blueviolet;
+        height: 4vh;
+        width: 15vh;
+        position: absolute;
+        bottom:20vh;
+        left: 32.5vw;    
+    }
+    /* class pour images des dès qui sera renseigné avec le script js */
+    .imgDes {
+        display: block;
+        height: 45vw;
+        width: 45vw;
+        position: absolute;
+        top: 35vh;
+        right: 27.5vw;
+        border: 2px solid blueviolet;
+        border-radius: 2vw;
+    }
+    } 
+    
